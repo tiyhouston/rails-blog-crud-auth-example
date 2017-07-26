@@ -1,0 +1,23 @@
+<% @article.errors.full_messages.each do |msg| %>
+  <li class="error"><%= msg %></li>
+<% end %>
+<%= form_for @article do |f| %>
+  <div class="">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="">
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+  </div>
+
+  <div class="">
+    <%= f.submit %>
+  </div>
+<% end %>
