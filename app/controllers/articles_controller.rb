@@ -1,4 +1,11 @@
 class ArticlesController < ApplicationController
+
+  before_action do
+    if @current_user.blank?
+      redirect_to login_path
+    end
+  end
+
   def index
     @articles = Article
                   .order("created_at DESC")

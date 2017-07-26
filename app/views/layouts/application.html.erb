@@ -13,6 +13,13 @@
     <header>
       <%= link_to 'Home', root_path %>
       <%= link_to 'Articles', articles_path %>
+
+      <% if @current_user %>
+        Hi <%= @current_user.username %>
+
+        <%= link_to 'Sign Out', logout_path, method: :delete %>
+      <% end %>
+
     </header>
 
     <%= yield %>
